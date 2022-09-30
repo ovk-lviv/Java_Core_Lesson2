@@ -1,4 +1,4 @@
-package ua.lviv.lgs;
+package ua.lviv.lgs.lesson2;
 
 public class Rectangle {
     private int width;
