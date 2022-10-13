@@ -12,11 +12,13 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
         int number = scanner.nextInt();
-        String month;
+        String month; // variable is used multiple times
 
-
+// values fetched as they are used multiple times
         Service.Months[] arrMonths = Service.Months.values();
         Service.Seasons[] arrSeasons = Service.Seasons.values();
+
+        // values to be used down in the code
         String seasonName = "";
         int numberOfDays = 0;
         int indexSeason;
@@ -46,11 +48,12 @@ public class Main {
                     if (m.name().equals(month)) {
                         seasonName = m.getSeason().toString();
                     }
+                }
+                for (Service.Months m : arrMonths) {
                     if (m.getSeason().toString().equals(seasonName)) {
                         System.out.println(m.name());
                     }
                 }
-
                 break;
 
             case 3:
@@ -60,6 +63,8 @@ public class Main {
                     if (m.name().equals(month)) {
                         numberOfDays = m.getDays();
                     }
+                }
+                for (Service.Months m : arrMonths) {
                     if (m.getDays() == numberOfDays) {
                         System.out.println(m.name());
                     }
@@ -108,13 +113,14 @@ public class Main {
                     System.out.println("There are no months with larger number of days");
                 }
                 break;
-
+            // the next season is calculated considering season's index in enum
             case 6:
                 System.out.println("Enter month...");
                 month = scanner.next().toUpperCase();
                 for (Service.Months m : arrMonths) {
                     if (m.name().equals(month)) {
                         indexSeason = m.season.ordinal();
+                        //for cases when new index can go outside array
                         if (indexSeason >= arrSeasons.length - 1) {
                             System.out.println(arrSeasons[0]);
                         } else {
@@ -123,12 +129,14 @@ public class Main {
                     }
                 }
                 break;
+            // the previous season is calculated considering season's index in enum
             case 7:
                 System.out.println("Enter month...");
                 month = scanner.next().toUpperCase();
                 for (Service.Months m : arrMonths) {
                     if (m.name().equals(month)) {
                         indexSeason = m.season.ordinal();
+                        // for cases when new index can go outside array
                         if (indexSeason == 0) {
                             System.out.println(arrSeasons[arrSeasons.length - 1]);
                         } else {
@@ -157,12 +165,12 @@ public class Main {
             case 0:
                 System.out.println("Enter month...");
                 month = scanner.next().toUpperCase();
-                flag=false;
+                flag = false;
                 for (Service.Months m : arrMonths) {
                     if (m.name().equals(month)) {
                         if (m.getDays() % 2 == 0) {
                             System.out.println("Month has even number of days");
-                            flag=true;
+                            flag = true;
                         }
                     }
                 }
