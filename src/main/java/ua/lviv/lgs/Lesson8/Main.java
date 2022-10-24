@@ -12,11 +12,13 @@ public class Main {
         menu();
 
         Scanner scanner = new Scanner(System.in);
+        // a number that user enters after he sees the menu
         int number = scanner.nextInt();
 
-        String month; // variable is used multiple times
+        // variable is used multiple times
+        String month;
 
-// values fetched as they are used multiple times
+        // values fetched as they are used multiple times
         Service.Months[] arrMonths = Service.Months.values();
         Service.Seasons[] arrSeasons = Service.Seasons.values();
 
@@ -25,6 +27,7 @@ public class Main {
         int numberOfDays = 0;
         int indexSeason;
         boolean flag;
+        // block of code selecting the info to be displayed to the user depending on the number picked
         try {
 
             switch (number) {
@@ -182,8 +185,9 @@ public class Main {
                     }
                     break;
                 default:
-                    System.out.println("Something went wrong!");
+                    System.out.println("Something went wrong!The numbers must be 0-9");
             }
+            //catch block to check the exception if user enters values that are not integers
         } catch (Exception e) {
             System.out.println(e.getMessage());
             }

@@ -1,10 +1,20 @@
+/**
+ *
+ */
 package ua.lviv.lgs.Lesson8;
 
+/**
+ * class Service contains enums with seasons and months' names
+ * @author okovalska
+ * @since JDK1.0
+ */
+
 public class Service {
+    /** Enumeration with seasons, presented in natural order*/
     enum Seasons {
         WINTER, SPRING, SUMMER, FALL
     }
-
+    /** Enumeration with months, presented in natural order*/
     enum Months {
         JANUARY(31, Seasons.WINTER),
         FEBRUARY(28, Seasons.WINTER),
@@ -19,23 +29,34 @@ public class Service {
         NOVEMBER(30, Seasons.FALL),
         DECEMBER(31, Seasons.WINTER);
 
+        /**represents the number of days in month*/
         int days;
+
+        /**represents the season a month belongs to*/
         Seasons season;
 
+        /**
+         * creates an object with number of days and season attribute
+         * @param days
+         * @param season
+         */
         Months (int days, Seasons season) {
             this.days=days;
             this.season=season;
         }
 
+        /**@return the number of days in month*/
         public int getDays() {
             return days;
         }
 
+        /**@return the season of the month*/
         public Seasons getSeason() {
             return season;
         }
     }
 
+    /**displays a list of options that user can pick*/
     public static void menu() {
         System.out.println("Enter 1 to see if month exists");
         System.out.println("Enter 2 to see months of the same season");
