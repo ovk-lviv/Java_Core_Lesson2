@@ -6,7 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import static ua.lviv.lgs.Lesson8.Service.menu;
+import static ua.lviv.lgs.Lesson12.reworkEnaums.ServiceEnum.menu;
+
 
 public class MainEnums {
 
