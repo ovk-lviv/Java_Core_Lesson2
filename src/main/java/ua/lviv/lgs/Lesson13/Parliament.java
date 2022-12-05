@@ -1,7 +1,6 @@
 package ua.lviv.lgs.Lesson13;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Parliament {

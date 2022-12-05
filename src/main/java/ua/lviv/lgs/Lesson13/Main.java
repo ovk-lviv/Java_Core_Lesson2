@@ -32,8 +32,8 @@ public class Main {
 
             case 2: {
                 System.out.println("Please enter the name of fraction to remove");
-                Scanner scanner2 = new Scanner(System.in);
-                String name = scanner2.nextLine();
+                Scanner scanner1 = new Scanner(System.in);
+                String name = scanner1.nextLine();
                 parliament.removeFraction(name);
                 parliament.showFractions();
                 break;
@@ -45,24 +45,35 @@ public class Main {
             }
 
             case 4: {
-                Fraction fraction = parliament.getFraction("Fraction 1");
-                fraction.clearFraction("Fraction 1");
+                System.out.println("Enter the name of fraction to be cleared");
+                Scanner scanner1 = new Scanner(System.in);
+                String name = scanner1.nextLine();
+                parliament.getFraction(name).clearFraction(name);
                 break;
             }
 
             case 5: {
-                parliament.showFraction("Fraction 1");
+                System.out.println("Enter the name of fraction to be displayed");
+                Scanner scanner1 = new Scanner(System.in);
+                String name = scanner1.nextLine();
+                parliament.showFraction(name);
                 break;
 
             }
 
             case 6: {
-                parliament.addDeputyToFraction("Fraction 1");
+                System.out.println("Enter the name of fraction to add deputy to");
+                Scanner scanner1 = new Scanner(System.in);
+                String name = scanner1.nextLine();
+                parliament.addDeputyToFraction(name);
                 break;
             }
 
             case 7: {
-                parliament.removeDeputyFromFraction("Fraction 1");
+                System.out.println("Enter the name of fraction to add deputy to");
+                Scanner scanner1 = new Scanner(System.in);
+                String name = scanner1.nextLine();
+                parliament.removeDeputyFromFraction(name);
                 break;
             }
 
