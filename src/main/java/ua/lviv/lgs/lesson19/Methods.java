@@ -52,21 +52,22 @@ public class Methods {
         }
     }
 
-    public static ArrayList<Employee> deserializeCollection() {
-        ArrayList list = null;
+    public static void deserializeCollection() {
+
         try {
             FileInputStream deserialize = new FileInputStream("path\\mployeeList.ser");
             ObjectInputStream in = new ObjectInputStream(deserialize);
-            list = (ArrayList) in.readObject();
+            ArrayList list = (ArrayList) in.readObject();
             in.close();
-            deserialize.close();
+
 
         } catch (IOException i) {
             i.getMessage();
+            System.out.println("The filename is not correct");
         } catch (ClassNotFoundException a) {
             a.getCause();
         }
-        return list;
+
 
     }
 
